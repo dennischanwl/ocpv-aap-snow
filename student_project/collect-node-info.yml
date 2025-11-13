@@ -9,4 +9,4 @@
   - name: Collect inventory facts
     ansible.builtin.set_stats:
       data:
-        node_info: "{{ node_info + [{'hostname': ansible_facts['nodename'], 'default_ip': ansible_host, 'default_mac': ansible_facts['default_ipv4']['macaddress'], 'vendor': ansible_facts['product_name'] }] }}"
+        node_info: "{{ node_info + [{'hostname': ansible_facts['nodename'], 'cpu_count': ansible_processor_count, 'default_ip': ansible_host, 'os_version': ansible_distribution_version, 'vendor': ansible_facts['product_name'] }] }}"
