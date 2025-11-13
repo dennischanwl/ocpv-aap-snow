@@ -14,12 +14,12 @@
       name: "{{ item.hostname }}-{{ demo_username }}"
       assigned_to: "{{ demo_username }}"
       ip_address: "{{ item.default_ip }}"
-      cpu_count: "{{ item.cpu_count }}"
-      os_version: "{{ item.os_version }}"
       environment: test
       other:
         sys_class_name: cmdb_ci_linux_server
         operating_system: "Linux Red Hat"
+        cpu_count: "{{ item.cpu_count }}"
+        os_version: "{{ item.os_version }}"
     loop: "{{ node_info }}"
     register: configuration_item
 
